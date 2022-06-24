@@ -1,5 +1,5 @@
 <section class="property-binding">
-    <article>
+   <!-- <article>
         <h3>Interpolation/Interpolacao</h3>
         <p>String renderizada com interpolacao: {{ url }}</p>
         <p>Resultado de 1 + 1 e: {{ 1 + 1 }}</p>
@@ -12,5 +12,29 @@
         <img src="{{ urlImagem }}" alt="">
         <img [src]="urlImagem" alt="">
         <img bind-src="urlImagem" alt="">
+    </article> -->
+
+    <article>
+        <h3>Class e Style Binding</h3>
+        <div>
+            Selecione uma classe
+            <select #classe (change)="0">
+                <option value="alert-success">Sucesso</option>
+                <option value="alert-info">Info</option>
+                <option value="alert-warning">Alerta</option>
+                <option value="alert-danger">Erro</option>
+            </select>
+            <br><br>
+
+            <div class="{{ classe.value }}">
+                Texto colorido conforme o valor do combobox
+            </div>
+            <br><br>
+
+            <div class="box" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+            <div class="box" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+            <div class="box" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
+            <div class="box" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
+        </div>
     </article>
 </section>
