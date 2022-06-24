@@ -12,7 +12,13 @@ export class DataBindingComponent implements OnInit {
   urlImagem: string = 'http://lorempixel.com.br/400/200/nature';
 
   valorAtual: string = '';
-  valorSalvo: string = '';
+
+  nome:string = 'abc';
+
+  pessoa = {
+    nome: 'def',
+    idade: 20
+  }
 
   getValor(){
     return 1;
@@ -26,12 +32,8 @@ export class DataBindingComponent implements OnInit {
     alert('Botao clicado');
   }
 
-  onKeyUp(evento:KeyboardEvent){
-    this.valorAtual = ((<HTMLInputElement>evento.target).value);
-  }
-  
-  salvarValor(valor: any){
-    this.valorSalvo = valor;
+  onKeyUp(evento: KeyboardEvent){
+    this.nome = ((<HTMLInputElement>evento.target).value);
   }
 
   constructor() { }

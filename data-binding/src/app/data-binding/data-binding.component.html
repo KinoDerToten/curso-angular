@@ -36,7 +36,7 @@
             <div class="box" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
             <div class="box" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div>
         </div>
-    </article> -->
+    </article>
 
     <article>
         <h3>Event binding</h3>
@@ -47,6 +47,25 @@
             <input type="text" (keyup)="onKeyUp($event)">
 
             <p>Valor Atual: {{ valorAtual }}</p>
+        </div>
+    </article> -->
+
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <input type="text" [value]="nome" (keyup)="onKeyUp($event)">
+
+            <input #CampoInput type="text" [(ngModel)]="nome">
+
+            <p>Voce digitou: {{ nome }}</p>
+        </div>
+
+        <div>
+
+            <p>Menu nome e {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+
+            <input type="text" [(ngModel)]="pessoa.nome">
+            <input type="text" [(ngModel)]="pessoa.idade">
         </div>
     </article>
 </section>
